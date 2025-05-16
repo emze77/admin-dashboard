@@ -54,6 +54,7 @@ img.med {
 /* Following HTML structure */
 
 .container {
+	/* left: 0; */
   display: grid;
   grid-template-rows: 60px 70px 900px;
   grid-template-columns: 220px 1000px;

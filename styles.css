@@ -42,12 +42,12 @@ img {
 }
 
 img.big {
-	width: 40px;
+  width: 40px;
   height: 40px;
 }
 
 img.med {
-	width: 35px;
+  width: 35px;
   height: 35px;
 }
 
@@ -81,14 +81,14 @@ img.med {
     justify-items: left;
   }
 
-	& .sideCommandGroup:hover {
-		background-color: #d79a2134;
-		cursor: pointer;
-	}
+  & .sideCommandGroup:hover {
+    background-color: #d79a2134;
+    cursor: pointer;
+  }
 
-	& .header > img {
-		margin-left: -10px;
-	}
+  & .header > img {
+    margin-left: -10px;
+  }
 }
 
 .searchSection {
@@ -111,7 +111,7 @@ img.med {
 
     & #searchBarInput {
       background-color: var(--green);
-			border: 4px solid var(--green-dim);
+      border: 4px solid var(--green-dim);
       /* box-shadow: 0px 0px 8px 0px var(--orange-dim); */
       height: 25px;
       width: 500px;
@@ -120,7 +120,7 @@ img.med {
   }
   & .personal {
     justify-self: right;
-		align-self: center;
+    align-self: center;
     display: grid;
     gap: 30px;
     grid-auto-flow: column;
@@ -148,7 +148,7 @@ img.med {
 
     & .profileLogo {
       place-self: center;
-			align-self: center;
+      align-self: center;
       grid-row: 1 / span 2;
     }
 
@@ -171,7 +171,6 @@ img.med {
 
     & button {
       padding: 6px 20px;
-      /* margin: 0px 20px; */
       font-weight: var(--bold);
       border-radius: 20px;
       color: var(--bg1);
@@ -205,71 +204,107 @@ img.med {
   gap: 15px;
   overflow: scroll;
 
+  & .announcements,
+  .trending,
+  .cardspace {
+    display: grid;
+    grid-template-rows: 50px max-content;
+  }
+
   & .cardspace {
     grid-area: 1 / 1 / 3 / 2;
     overflow: auto;
 
-		& .cards {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-			gap: var(--reg-padding);
-
-			& .card {
-				background: var(--bg);
-				border-radius: var(--reg-padding);
-				padding: var(--reg-padding);
-			}
-		}
-  }
-
-  & .announcements,
-  .trending, .cardspace {
-    display: grid;
-    grid-template-rows: 50px max-content;
-
-    & .singleAnnouncementSpace,
-    .trendingSpace {
-      grid-row: 2;
-      padding: 25px;
-      background-color: var(--bg);
-      border-radius: var(--reg-padding);
+    & .cards {
       display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: var(--reg-padding);
 
-      & .singleAnnouncement:not(:last-child) {
-        border-bottom: 1px solid var(--fg);
-      }
+      & .card {
+        background: var(--bg);
+        border-radius: var(--reg-padding);
+        padding: var(--reg-padding);
 
-      & .singleAnnouncement {
-        padding-bottom: 25px;
-
-        & h4 {
-          color: var(--green);
-          padding-bottom: 5px;
-          margin: 0;
-        }
-      }
-
-			& .singleTrendingItem {
 				display: grid;
-				grid-template-rows: 1fr 1fr;
-				grid-template-columns: 1fr 4fr;
+				grid-template-rows: 30px 120px 30px;
 
-				& img {
-					grid-row: 1 / span 2;
-					place-self: center;
-					padding-right: var(--reg-padding)
+
+				& h3 {
+					margin-bottom: 0px;
 				}
 
-				& .singleTrendingName {
-					font-weight: var(--bold);
-					color: var(--aqua)
+				& .cardText {
+					margin: 10px 0px 15px 0px;
+					overflow: scroll;
+
+					& p {
+						margin: 0px;
+					}
 				}
 
-				& p {
-					margin: 0;
+				& .logoSection {
+					grid-row: 3;
+					justify-self: right;
+					align-self: center;
+
+					display: grid;
+					grid-auto-columns: max-content;
+					grid-auto-flow: column;
+					gap: var(--reg-padding);
 				}
-			}
+
+
+
+				&:nth-child(2) {
+					border-left: 8px solid var(--aqua);
+
+				}
+      }
+    }
+  }
+
+  & .singleAnnouncementSpace,
+  .trendingSpace {
+    grid-row: 2;
+    padding: 25px;
+    background-color: var(--bg);
+    border-radius: var(--reg-padding);
+    display: grid;
+    gap: var(--reg-padding);
+
+    & .singleAnnouncement:not(:last-child) {
+      border-bottom: 1px solid var(--fg);
+    }
+
+    & .singleAnnouncement {
+      padding-bottom: 25px;
+
+      & h4 {
+        color: var(--green);
+        padding-bottom: 5px;
+        margin: 0;
+      }
+    }
+
+    & .singleTrendingItem {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 4fr;
+
+      & img {
+        grid-row: 1 / span 2;
+        place-self: center;
+        padding-right: var(--reg-padding);
+      }
+
+      & .singleTrendingName {
+        font-weight: var(--bold);
+        color: var(--aqua);
+      }
+
+      & p {
+        margin: 0;
+      }
     }
   }
 }

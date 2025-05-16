@@ -19,6 +19,13 @@
   font-size: 14px;
   color: var(--fg);
   font-family: var(--text-font);
+	scrollbar-color: var(--aqua) var(--bg3);
+  scrollbar-width: 2px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -54,10 +61,10 @@ img.med {
 /* Following HTML structure */
 
 .container {
-	/* left: 0; */
+  /* left: 0; */
   display: grid;
-  grid-template-rows: 60px 70px 900px;
-  grid-template-columns: 220px 1000px;
+  grid-template-rows: max(80px 5vh) max(80px 5vh) 80vh;
+  grid-template-columns: 1fr 5fr;
 }
 
 .sideboard {
@@ -108,14 +115,13 @@ img.med {
 
   & .searchBar {
     display: grid;
-    grid-template-columns: 50px max-content;
+    grid-template-columns: 30px 5fr;
 
     & #searchBarInput {
       background-color: var(--green);
       border: 4px solid var(--green-dim);
-      /* box-shadow: 0px 0px 8px 0px var(--orange-dim); */
       height: 25px;
-      width: 500px;
+      width: max(200px, 50vw);
       border-radius: 40px;
     }
   }
@@ -144,8 +150,7 @@ img.med {
     padding: 0;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 7fr;
-    align-items: center;
+    grid-template-columns: 70px max(220px, 35vw);
 
     & .profileLogo {
       place-self: center;
@@ -203,7 +208,7 @@ img.med {
   grid-template-columns: 5fr 2fr;
   grid-template-rows: 1fr 1fr;
   gap: 15px;
-  overflow: scroll;
+  overflow: auto;
 
   & .announcements,
   .trending,
@@ -221,58 +226,61 @@ img.med {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: var(--reg-padding);
 
+			& .card:hover {
+				background-color: var(--bg1);
+				cursor: pointer;
+			}
+
       & .card {
         background: var(--bg);
         border-radius: var(--reg-padding);
         padding: var(--reg-padding);
 
-				display: grid;
-				grid-template-rows: 30px 120px 30px;
+        display: grid;
+        grid-template-rows: 30px 120px 30px;
 
+        & h3 {
+          margin-bottom: 0px;
+        }
 
-				& h3 {
-					margin-bottom: 0px;
-				}
+        & .cardText {
+          margin: 10px 0px 15px 0px;
+          overflow: auto;
 
-				& .cardText {
-					margin: 10px 0px 15px 0px;
-					overflow: scroll;
+          & p {
+            margin: 0px;
+          }
+        }
 
-					& p {
-						margin: 0px;
-					}
-				}
+        & .logoSection {
+          grid-row: 3;
+          justify-self: right;
+          align-self: center;
 
-				& .logoSection {
-					grid-row: 3;
-					justify-self: right;
-					align-self: center;
+          display: grid;
+          grid-auto-columns: max-content;
+          grid-auto-flow: column;
+          gap: var(--reg-padding);
+        }
 
-					display: grid;
-					grid-auto-columns: max-content;
-					grid-auto-flow: column;
-					gap: var(--reg-padding);
-				}
-
-
-				&:nth-child(1) {
-					border-left: 8px solid var(--red-dim);
-				}
-				&:nth-child(2) {
-					border-left: 8px solid var(--aqua-dim);
-				}
-				&:nth-child(3) {
-					border-left: 8px solid var(--purple-dim);
-				}
-				&:nth-child(4) {
-					border-left: 8px solid var(--yellow-dim);
-				}
-				&:nth-child(5) {
-					border-left: 8px solid var(--orange-dim);
-				}
-				&:nth-child(6) {
-					border-left: 8px solid var(--blue-dim);
-				}
+        &:nth-child(1) {
+          border-left: 8px solid var(--red-dim);
+        }
+        &:nth-child(2) {
+          border-left: 8px solid var(--aqua-dim);
+        }
+        &:nth-child(3) {
+          border-left: 8px solid var(--purple-dim);
+        }
+        &:nth-child(4) {
+          border-left: 8px solid var(--yellow-dim);
+        }
+        &:nth-child(5) {
+          border-left: 8px solid var(--orange-dim);
+        }
+        &:nth-child(6) {
+          border-left: 8px solid var(--blue-dim);
+        }
       }
     }
   }

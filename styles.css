@@ -254,10 +254,23 @@ img.med {
 				}
 
 
-
+				&:nth-child(1) {
+					border-left: 8px solid var(--red-dim);
+				}
 				&:nth-child(2) {
-					border-left: 8px solid var(--aqua);
-
+					border-left: 8px solid var(--aqua-dim);
+				}
+				&:nth-child(3) {
+					border-left: 8px solid var(--purple-dim);
+				}
+				&:nth-child(4) {
+					border-left: 8px solid var(--yellow-dim);
+				}
+				&:nth-child(5) {
+					border-left: 8px solid var(--orange-dim);
+				}
+				&:nth-child(6) {
+					border-left: 8px solid var(--blue-dim);
 				}
       }
     }
